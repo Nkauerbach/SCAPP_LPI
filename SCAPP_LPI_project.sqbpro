@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Nathan/OneDrive - James Madison University/SCAPP_LPI_project.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="browser query structure" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1450"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainLPI_CAGR"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="LPI_CAGR" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="1"/></sort><column_widths><column index="1" value="300"/><column index="2" value="157"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="Simple_CAGR_Analysis.sql">SELECT Country FROM LPI_CAGR ORDER BY CAGR DESC LIMIT 10;
+
+SELECT COUNT(*) as Total_Countries, ROUND(AVG(CAGR),3) as Average_CAGR,
+ROUND(MIN(CAGR),3) as Minimum_CAGR,
+ROUND(MAX(CAGR),3) as Maximum_CAGR,
+COUNT (CASE WHEN CAGR &gt; 0 THEN 1 END) as Positive_Growth_Countries,
+COUNT (CASE WHEN CAGR &lt; 0 THEN 1 END) as Negative_Growth_Countries 
+FROM LPI_CAGR;
+
+SELECT Country, CAGR,
+NTILE(5) OVER (ORDER BY CAGR DESC) as Quintile,
+CASE NTILE(5) OVER (ORDER BY CAGR DESC)
+WHEN 1 THEN 'Top Quintile (Top 20%)'
+WHEN 2 THEN 'Second Quintile (60-80%)'
+WHEN 3 THEN 'Third Quintile (40-60%)'
+WHEN 4 THEN 'Fourth Quintile (20-40%)'
+WHEN 5 THEN 'Bottom Quintile (Bottom 20%)'
+END as Quintile_Category FROM LPI_CAGR ORDER BY CAGR;
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
