@@ -6,9 +6,9 @@ ROUND(MIN(CAGR),3) as Minimum_CAGR,
 
 ROUND(MAX(CAGR),3) as Maximum_CAGR,
 
-COUNT (CASE WHEN CAGR &gt; 0 THEN 1 END) as Positive_Growth_Countries,
+COUNT (CASE WHEN CAGR > 0 THEN 1 END) as Positive_Growth_Countries,
 
-COUNT (CASE WHEN CAGR &lt; 0 THEN 1 END) as Negative_Growth_Countries 
+COUNT (CASE WHEN CAGR < 0 THEN 1 END) as Negative_Growth_Countries 
 
 FROM LPI_CAGR;
 
