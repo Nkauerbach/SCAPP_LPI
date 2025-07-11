@@ -72,8 +72,8 @@ SCAPP-LPI/
 
 ### 2. Power BI Dashboard
 1. Open `Worldbank_LPI_drillllly.pbix` in Power BI Desktop
-2. Refresh data connections if prompted
-3. Navigate between pages using the page tabs at the bottom
+2. Refresh the data connections if prompted
+3. Navigate between pages, use drilldown functionality working off of the azure map
 
 ### 3. SQL Analysis
 1. Open SQLiteStudio or your preferred SQLite client
@@ -82,7 +82,7 @@ SCAPP-LPI/
 
 ### 4. Python Forecasting (*if available*)
 1. Install required Python libraries: `pip install pandas scipy numpy`
-2. Run the interpolation scripts to generate forecasted values
+2. Run the interpolation scripts to generate forecasted values (already imported to executive excel file)
 
 ## Key Metrics & Analysis
 
@@ -91,7 +91,7 @@ SCAPP-LPI/
 - **Application**: Applied to both LPI scores and population data
 - **Quintile Classification**: Countries ranked into 5 performance categories
 
-### LPI Components
+### LPI Components - Based on subjective judgements from industry proffesional survey data!
 1. **Customs**: *Efficiency of customs and border management*
 2. **Infrastructure**: *Quality of trade and transport infrastructure*
 3. **International shipments**: *Ease of arranging competitively priced shipments*
@@ -105,16 +105,12 @@ SCAPP-LPI/
 - Integrate [WITS UN Comtrade](https://wits.worldbank.org/) industry-specific trade data
 - Add *HS Code-based* product categorization
 - Include pet industry import/export analysis (*Pet Food, Pet Toys, Pet Technology*)
+- Second layer of Power BI functionality, Arc GIS map dispaying import quantity and net weight for countries specific to each HS code 
 
-### Phase 2: Dashboard Enhancement
-- Update Power BI dashboard with additional data sources
-- Create *interactive tooltip pages* for stakeholder presentations
-- Add *real-time data refresh* capabilities
-
-### Phase 3: Advanced Analytics
+### Phase 2: Advanced Analytics
 - *Machine learning models* for LPI score prediction
-- *Correlation analysis* between LPI improvements and trade volumes
-- *Supply chain resilience* indicators
+- *Correlation analysis and t-tests* between LPI improvements and trade volumes
+- *Supply chain resilience* indicators specific to the pet industry
 
 ## Data Quality & Validation
 
