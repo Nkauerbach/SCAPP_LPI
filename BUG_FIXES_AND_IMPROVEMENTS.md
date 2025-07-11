@@ -5,7 +5,7 @@ Analysis of your Logistics Performance Index (LPI) project reveals several areas
 
 ---
 
-## 🐛 SQL Code Issues & Fixes
+## SQL Code Issues & Fixes
 
 ### 1. **HTML Entity Encoding in SQL**
 **File**: `SCAPP_LPI_project.sqbpro`  
@@ -22,7 +22,7 @@ COUNT (CASE WHEN CAGR < 0 THEN 1 END) as Negative_Growth_Countries
 ```
 
 ### 2. **Missing Error Handling**
-**Issue**: No validation for NULL values in CAGR calculations  
+**Issue**: No validation for *NULL values* in CAGR calculations  
 **Recommendation**: Add NULL handling:
 ```sql
 SELECT Country, 
@@ -38,7 +38,7 @@ ORDER BY CAGR DESC;
 
 ### 3. **Quintile Description Inconsistency**
 **Issue**: Quintile descriptions don't match the ordering logic  
-**Current**: "Second Quintile (60-80%)" but NTILE orders DESC, making quintile 2 the 60-80th percentile  
+**Current**: "Second Quintile (60-80%)" but NTILE orders DESC, making quintile 2 the *60-80th percentile*  
 **Fix**: Correct the descriptions:
 ```sql
 CASE NTILE(5) OVER (ORDER BY CAGR DESC)
@@ -52,10 +52,10 @@ END as Quintile_Category
 
 ---
 
-## 📊 Data Quality & Performance Improvements
+## Data Quality & Performance Improvements
 
 ### 4. **Add Data Validation Queries**
-**Recommendation**: Create validation queries to ensure data integrity:
+**Recommendation**: Create validation queries to ensure *data integrity*:
 ```sql
 -- Check for duplicate countries
 SELECT Country, COUNT(*) as duplicate_count 
@@ -71,7 +71,7 @@ WHERE ABS(CAGR) > 0.15; -- Flag CAGR > 15% or < -15%
 
 ### 5. **Performance Optimization**
 **Issue**: Repeated NTILE calculations in CASE statement  
-**Fix**: Use a CTE to calculate once:
+**Fix**: Use a *CTE* to calculate once:
 ```sql
 WITH quintile_data AS (
     SELECT Country, 
@@ -96,21 +96,21 @@ ORDER BY CAGR DESC;
 
 ---
 
-## 🗂️ Project Structure Improvements
+## Project Structure Improvements
 
 ### 6. **Missing Version Control Best Practices**
 **Issues**:
-- Large binary files (.pbix, .xlsx, .pptx) tracked in git (11MB+ files)
+- Large binary files (*.pbix*, *.xlsx*, *.pptx*) tracked in git (*11MB+ files*)
 - No `.gitignore` file
 
 **Recommendations**:
 - Create a `.gitignore` file
-- Use Git LFS for large files
+- Use *Git LFS* for large files
 - Consider storing data files separately
 
 ### 7. **Code Organization**
 **Issues**:
-- SQL queries embedded in .sqbpro file
+- SQL queries embedded in *.sqbpro* file
 - No separate SQL script files
 - Missing Python interpolation code mentioned in README
 
@@ -132,36 +132,36 @@ ORDER BY CAGR DESC;
 
 ---
 
-## 📋 Documentation Improvements
+## Documentation Improvements
 
 ### 8. **README Enhancement**
 **Issues**:
 - Typos: "Drillllly" → "Drilldown", "querys" → "queries"
-- Missing technical specifications
+- Missing *technical specifications*
 - No setup instructions
 
 **Recommendations**:
 - Fix spelling errors
-- Add data source citations
-- Include setup/installation instructions
-- Document data schema and relationships
+- Add *data source citations*
+- Include *setup/installation instructions*
+- Document *data schema and relationships*
 
 ### 9. **Missing Data Dictionary**
 **Recommendation**: Create a data dictionary explaining:
-- LPI score components and calculation methodology
-- CAGR calculation formula and time period
-- Country inclusion/exclusion criteria
-- Data update frequency
+- LPI score components and *calculation methodology*
+- CAGR calculation formula and *time period*
+- Country *inclusion/exclusion criteria*
+- Data *update frequency*
 
 ---
 
-## 🔒 Security & Best Practices
+## Security & Best Practices
 
 ### 10. **Credentials Management**
-**Recommendation**: Ensure no hardcoded credentials in any files (not detected in current files, but good practice for future development)
+**Recommendation**: Ensure no *hardcoded credentials* in any files (*not detected in current files, but good practice for future development*)
 
 ### 11. **Code Comments**
-**Issue**: SQL code lacks inline documentation  
+**Issue**: SQL code lacks *inline documentation*  
 **Fix**: Add descriptive comments:
 ```sql
 -- Calculate summary statistics for CAGR across all countries
@@ -173,41 +173,41 @@ SELECT COUNT(*) as Total_Countries,
 
 ---
 
-## ⚡ Priority Fixes
+## Priority Fixes
 
 **High Priority**:
-1. ✅ **FIXED**: Fix HTML entity encoding in SQL (immediate functional issue)
-2. ✅ **FIXED**: Add NULL value handling
-3. ✅ **FIXED**: Create proper `.gitignore` file
+1. **FIXED**: Fix HTML entity encoding in SQL (*immediate functional issue*)
+2. **FIXED**: Add NULL value handling
+3. **FIXED**: Create proper `.gitignore` file
 
 **Medium Priority**:
-4. ✅ **FIXED**: Correct quintile descriptions
-5. ✅ **FIXED**: Extract SQL to separate files
-6. ✅ **FIXED**: Fix README typos
+4. **FIXED**: Correct quintile descriptions
+5. **FIXED**: Extract SQL to separate files
+6. **FIXED**: Fix README typos
 
 **Low Priority**:
-7. ✅ **FIXED**: Add data validation queries
-8. ✅ **FIXED**: Improve project structure
-9. ✅ **FIXED**: Create comprehensive documentation
+7. **FIXED**: Add data validation queries
+8. **FIXED**: Improve project structure
+9. **FIXED**: Create comprehensive documentation
 
 ---
 
-## 🛠️ Implementation Status
+## Implementation Status
 
-### ✅ Completed Fixes
-1. ✅ Applied HTML entity fixes to make SQL functional
-2. ✅ Implemented CTE optimization for better performance
-3. ✅ Created comprehensive documentation and data dictionary
-4. ✅ Enhanced README with technical specifications and setup instructions
-5. ✅ Added proper .gitignore file for version control
-6. ✅ Created data validation queries for quality assurance
-7. ✅ Fixed all identified typos and documentation issues
+### Completed Fixes
+1. Applied HTML entity fixes to make SQL functional
+2. Implemented *CTE optimization* for better performance
+3. Created comprehensive documentation and *data dictionary*
+4. Enhanced README with *technical specifications* and setup instructions
+5. Added proper `.gitignore` file for version control
+6. Created *data validation queries* for quality assurance
+7. Fixed all identified typos and documentation issues
 
-### 🔄 Remaining Tasks
-1. **Test queries with actual data**: Validate the improved SQL queries against your LPI_CAGR table
-2. **Add Python interpolation code**: Include the cubic spline forecasting scripts mentioned in documentation
+### Remaining Tasks
+1. **Test queries with actual data**: Validate the improved SQL queries against your *LPI_CAGR table*
+2. **Add Python interpolation code**: Include the *cubic spline forecasting scripts* mentioned in documentation
 3. **Implement project structure**: Consider reorganizing files into the suggested folder structure
-4. **Power BI optimization**: Review and optimize DAX formulas if needed
+4. **Power BI optimization**: Review and optimize *DAX formulas* if needed
 
-### 📋 Additional Recommendations
+### Additional Recommendations
 If you have additional Python scripts, Power BI DAX formulas, or Excel VBA code, please share them for a more comprehensive review and potential optimization.

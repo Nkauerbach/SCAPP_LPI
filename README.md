@@ -2,36 +2,36 @@
 
 **Author**: Nathan Auerbach | nkauerba@ncsu.edu | [LinkedIn](https://www.linkedin.com/in/nkauerbach05)
 
-## 📊 Project Overview
+## Project Overview
 
 This project analyzes the World Bank's Logistics Performance Index (LPI) data from 2007-2023, focusing on supply chain performance trends and country-specific growth patterns. The analysis combines multiple data modeling approaches including Power BI dashboards, Excel analytics, Python forecasting, and SQL data processing.
 
-## 🎯 Key Features
+## Key Features
 
 ### Interactive Power BI Drillthrough Dashboard
 - **Country-specific analysis**: International LPI and Total Population CAGR statistics
 - **Visualization components**:
-  - Radar Chart for country benchmarking against global averages
-  - Bar Chart with global average reference line
-  - Population trend line charts with time series analysis
-  - Interactive cards with key performance indicators
-  - Interactive bubble map for all surveyed countries (139 countries)
+  - *Radar Chart* for country benchmarking against global averages
+  - *Bar Chart* with global average reference line
+  - *Population trend line charts* with time series analysis
+  - *Interactive cards* with key performance indicators
+  - *Interactive bubble map* for all surveyed countries (139 countries)
 - **Data integration**: Multiple configured Excel sheets imported into Power BI data model
 
 ### Excel, Python, and SQLite Data Models
 - **Excel Analytics**:
-  - Executive summary file with Multiple Regression analysis output
-  - XLOOKUP and VLOOKUP functions with imported Total Population dataset
-  - Multiple scatter plots with deep dive analysis (Singapore case study)
+  - Executive summary file with *Multiple Regression* analysis output
+  - *XLOOKUP* and *VLOOKUP* functions with imported Total Population dataset
+  - Multiple scatter plots with deep dive analysis (*Singapore case study*)
 - **Python Forecasting**:
-  - Cubic Spline interpolation model for predicting missing LPI scores
+  - *Cubic Spline interpolation* model for predicting missing LPI scores
   - Population data forecasting for years without complete data
 - **SQL Analysis**:
-  - CAGR (Compound Annual Growth Rate) calculations
-  - Quintile categorization for country growth performance
+  - *CAGR* (Compound Annual Growth Rate) calculations
+  - *Quintile categorization* for country growth performance
   - Data validation and quality checks
 
-## 📋 Technical Specifications
+## Technical Specifications
 
 ### Data Sources
 - **Primary**: [World Bank Logistics Performance Index (LPI)](https://lpi.worldbank.org/)
@@ -41,8 +41,8 @@ This project analyzes the World Bank's Logistics Performance Index (LPI) data fr
   - Time series: 2007-2023 annual data
 
 ### Software Requirements
-- **Power BI Desktop** (latest version recommended)
-- **Microsoft Excel** (2019 or later for XLOOKUP support)
+- **Power BI Desktop** (*latest version recommended*)
+- **Microsoft Excel** (*2019 or later for XLOOKUP support*)
 - **Python 3.8+** with libraries:
   - `pandas` for data manipulation
   - `scipy` for interpolation functions
@@ -63,7 +63,7 @@ SCAPP-LPI/
 └── BUG_FIXES_AND_IMPROVEMENTS.md    # Technical improvements log
 ```
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### 1. Data Setup
 1. Download the project files to your local directory
@@ -80,59 +80,59 @@ SCAPP-LPI/
 2. Load the `SCAPP_LPI_project.sqbpro` project file
 3. Execute queries from `improved_lpi_analysis.sql` for enhanced analysis
 
-### 4. Python Forecasting (if available)
+### 4. Python Forecasting (*if available*)
 1. Install required Python libraries: `pip install pandas scipy numpy`
 2. Run the interpolation scripts to generate forecasted values
 
-## 📈 Key Metrics & Analysis
+## Key Metrics & Analysis
 
 ### CAGR Analysis (2007-2023)
-- **Formula**: CAGR = (Ending Value / Beginning Value)^(1/years) - 1
+- **Formula**: *CAGR = (Ending Value / Beginning Value)^(1/years) - 1*
 - **Application**: Applied to both LPI scores and population data
 - **Quintile Classification**: Countries ranked into 5 performance categories
 
 ### LPI Components
-1. **Customs**: Efficiency of customs and border management
-2. **Infrastructure**: Quality of trade and transport infrastructure
-3. **International shipments**: Ease of arranging competitively priced shipments
-4. **Logistics quality**: Competence and quality of logistics services
-5. **Tracking & tracing**: Ability to track and trace consignments
-6. **Timeliness**: Timeliness of shipments in reaching destinations
+1. **Customs**: *Efficiency of customs and border management*
+2. **Infrastructure**: *Quality of trade and transport infrastructure*
+3. **International shipments**: *Ease of arranging competitively priced shipments*
+4. **Logistics quality**: *Competence and quality of logistics services*
+5. **Tracking & tracing**: *Ability to track and trace consignments*
+6. **Timeliness**: *Timeliness of shipments in reaching destinations*
 
-## 🔮 Future Development Plans
+## Future Development Plans
 
 ### Phase 1: Data Expansion
 - Integrate [WITS UN Comtrade](https://wits.worldbank.org/) industry-specific trade data
-- Add HS Code-based product categorization
-- Include pet industry import/export analysis (Pet Food, Pet Toys, Pet Technology)
+- Add *HS Code-based* product categorization
+- Include pet industry import/export analysis (*Pet Food, Pet Toys, Pet Technology*)
 
 ### Phase 2: Dashboard Enhancement
 - Update Power BI dashboard with additional data sources
-- Create interactive tooltip pages for stakeholder presentations
-- Add real-time data refresh capabilities
+- Create *interactive tooltip pages* for stakeholder presentations
+- Add *real-time data refresh* capabilities
 
 ### Phase 3: Advanced Analytics
-- Machine learning models for LPI score prediction
-- Correlation analysis between LPI improvements and trade volumes
-- Supply chain resilience indicators
+- *Machine learning models* for LPI score prediction
+- *Correlation analysis* between LPI improvements and trade volumes
+- *Supply chain resilience* indicators
 
-## 📊 Data Quality & Validation
+## Data Quality & Validation
 
 The project includes comprehensive data validation:
-- **Duplicate detection**: Automated checks for country data duplicates
-- **Outlier identification**: CAGR values outside ±15% are flagged for review
-- **Missing data handling**: NULL value management and interpolation strategies
-- **Consistency checks**: Cross-validation between different data sources
+- **Duplicate detection**: *Automated checks for country data duplicates*
+- **Outlier identification**: *CAGR values outside ±15% are flagged for review*
+- **Missing data handling**: *NULL value management and interpolation strategies*
+- **Consistency checks**: *Cross-validation between different data sources*
 
-## 🤝 Contributing
+## Contributing
 
 For questions, suggestions, or collaboration opportunities, please contact:
 - **Email**: nkauerba@ncsu.edu
 - **LinkedIn**: [Nathan Auerbach](https://www.linkedin.com/in/nkauerbach05)
 
-## 📝 License
+## License
 
-This project is for academic and research purposes. Data sources are credited to their respective organizations (World Bank, UN Comtrade).
+This project is for *academic and research purposes*. Data sources are credited to their respective organizations (*World Bank, UN Comtrade*).
 
 ---
 

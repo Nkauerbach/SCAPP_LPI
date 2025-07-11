@@ -1,12 +1,12 @@
 # Data Dictionary - SCAPP-LPI Project
 
-## 📋 Overview
+## Overview
 
 This data dictionary provides detailed information about the datasets, metrics, and methodologies used in the Supply Chain Analytics & Performance Project focusing on the Logistics Performance Index (LPI).
 
 ---
 
-## 🌐 Primary Data Source: World Bank Logistics Performance Index (LPI)
+## Primary Data Source: World Bank Logistics Performance Index (LPI)
 
 ### Data Source Details
 - **Publisher**: World Bank Group
@@ -29,7 +29,7 @@ This data dictionary provides detailed information about the datasets, metrics, 
 
 ---
 
-## 📊 LPI Score Components & Methodology
+## LPI Score Components & Methodology
 
 ### Overall LPI Score (Scale: 1-5)
 The LPI is calculated as the weighted average of six key dimensions:
@@ -71,7 +71,7 @@ LPI Score = (Customs + Infrastructure + Int_Shipments + Logistics_Quality + Trac
 
 ---
 
-## 📈 CAGR (Compound Annual Growth Rate) Methodology
+## CAGR (Compound Annual Growth Rate) Methodology
 
 ### Definition
 CAGR represents the mean annual growth rate over a specified time period, assuming annual compounding.
@@ -98,7 +98,7 @@ CAGR = (Ending Value / Beginning Value)^(1/Number of Years) - 1
 
 ---
 
-## 🗂️ Dataset Field Definitions
+## Dataset Field Definitions
 
 ### Primary LPI Dataset Fields
 
@@ -127,7 +127,7 @@ CAGR = (Ending Value / Beginning Value)^(1/Number of Years) - 1
 
 ---
 
-## 🌍 Country Inclusion/Exclusion Criteria
+## Country Inclusion/Exclusion Criteria
 
 ### Inclusion Criteria
 - Countries with LPI data for at least 2 survey years
@@ -151,7 +151,7 @@ CAGR = (Ending Value / Beginning Value)^(1/Number of Years) - 1
 
 ---
 
-## 🔄 Data Update Schedule & Versioning
+## Data Update Schedule & Versioning
 
 ### Update Frequency
 - **LPI Survey**: Every 2 years (biennial)
@@ -171,7 +171,7 @@ CAGR = (Ending Value / Beginning Value)^(1/Number of Years) - 1
 
 ---
 
-## 📊 Secondary Data Sources
+## Secondary Data Sources
 
 ### World Bank Population Data
 - **Source**: World Bank Open Data
@@ -187,7 +187,7 @@ CAGR = (Ending Value / Beginning Value)^(1/Number of Years) - 1
 
 ---
 
-## ❗ Data Limitations & Considerations
+## Data Limitations & Considerations
 
 ### Survey Limitations
 - **Self-reported data**: Based on perceptions of logistics professionals
@@ -206,7 +206,7 @@ CAGR = (Ending Value / Beginning Value)^(1/Number of Years) - 1
 
 ---
 
-## 📞 Data Support & Contact
+## Data Support & Contact
 
 For questions about data methodology, calculations, or access:
 
