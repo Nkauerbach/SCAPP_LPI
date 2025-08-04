@@ -1,0 +1,35 @@
+#To format CAGR values from 2007-2023 per Country on SQLite for export to my executive Excel file. The second group of code creates growth categories for the 139 data points based on a Quintile split.
+
+SELECT COUNT(*) as Total_Countries, ROUND(AVG(CAGR),3) as Average_CAGR,
+
+ROUND(MIN(CAGR),3) as Minimum_CAGR,
+
+ROUND(MAX(CAGR),3) as Maximum_CAGR,
+
+COUNT (CASE WHEN CAGR &gt; 0 THEN 1 END) as Positive_Growth_Countries,
+
+COUNT (CASE WHEN CAGR &lt; 0 THEN 1 END) as Negative_Growth_Countries 
+
+FROM LPI_CAGR;
+
+
+
+SELECT Country, CAGR,
+
+NTILE(5) OVER (ORDER BY CAGR DESC) as Quintile,
+
+CASE NTILE(5) OVER (ORDER BY CAGR DESC)
+
+WHEN 1 THEN 'Top Quintile (Top 20%)'
+
+WHEN 2 THEN 'Second Quintile (60-80%)'
+
+WHEN 3 THEN 'Third Quintile (40-60%)'
+
+WHEN 4 THEN 'Fourth Quintile (20-40%)'
+
+WHEN 5 THEN 'Bottom Quintile (Bottom 20%)'
+
+END as Quintile_Category FROM LPI_CAGR ORDER BY CAGR;
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
